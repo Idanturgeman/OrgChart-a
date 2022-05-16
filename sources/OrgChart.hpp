@@ -16,14 +16,15 @@ namespace ariel
     class OrgChart
     { 
     public:
-        OrgChart();
-        ~OrgChart();
-        OrgChart &add_root(string name);
-        OrgChart &add_sub(string father, string son);
+        
         friend ostream &operator<<(ostream &out,OrgChart &root);
         string* begin_level_order();
         string* end_preorder();
         string* begin_preorder();
+        OrgChart();
+        ~OrgChart();
+        OrgChart &add_sub(string father, string son);
+        OrgChart &add_root(string name);
         string* begin(){
             return begin_level_order();
         }
