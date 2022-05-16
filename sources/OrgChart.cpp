@@ -69,11 +69,13 @@ namespace ariel
         {
             order++;
             this->b_level_order.push_back(node.sones.at(i).name);
+            level++;
         }
         for (size_t i = 0; i < node.sones.size(); i++)
         {
-            level++;
+            order++;
             fill_q_for_level_order(node.sones[i]);
+            level++;
         }
     }
     // reverse order
@@ -82,16 +84,19 @@ namespace ariel
     {
         numOfReversOrder++;
         int j = 0;
+        int ans = 0;
         for (int i = node.sones.size() - 1; i >= 0; i--)
         {
             j++;
             this->b_reverse_order.insert(this->b_reverse_order.begin(), node.sones.at((size_t)i).name);
+            ans++;
         }
 
         for (int i = node.sones.size() - 1; i >= 0; i--)
         {
             j++;
             fill_q_for_reverse_order(node.sones[(size_t)i]);
+            ans++;
         }
     }
     // preorder
