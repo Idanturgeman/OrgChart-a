@@ -34,6 +34,5 @@ TEST_CASE("good input"){
     CHECK_NOTHROW(organization1.add_sub("CEO", "CTO"));
     CHECK_NOTHROW(organization1.add_sub("CEO", "COO"));
     CHECK_NOTHROW(organization1.add_sub("CTO", "VP_SW")); 
-    CHECK_NOTHROW(organization1.add_sub("CEO", "CFO"));
     }
 }
